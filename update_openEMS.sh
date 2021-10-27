@@ -118,6 +118,7 @@ echo "build openEMS and dependencies ... please wait"
 make >> $LOG_FILE 2>&1
 if [ $? -ne 0 ]; then
   echo "make failed, build incomplete, please see logfile for more details..."
+  cat $LOG_FILE
   cd $basedir
   echo "build incomplete, cleaning up tmp dir ..."
   rm -rf $tmpdir
