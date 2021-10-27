@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  build_ubuntu-18.04:
+  build_bionic:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
