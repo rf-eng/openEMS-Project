@@ -33,5 +33,5 @@ function ci_build {
     git submodule update --init fparser
     git submodule update --init hyp2mat
     git submodule update --init openEMS
-    /home/runner/work/openEMS-Project/openEMS-Project/update_openEMS.sh build_output --disable-GUI
+    $GITHUB_WORKSPACE/update_openEMS.sh $GITHUB_WORKSPACE/build_output --disable-GUI
 }
