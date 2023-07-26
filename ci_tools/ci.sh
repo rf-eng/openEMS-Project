@@ -15,6 +15,7 @@ function ci_pkg_install {
     # Compiling hyp2mat may require installing the following packages:
     sudo apt-get install gengetopt help2man groff pod2pdf bison flex libhpdf-dev libtool
     sudo apt-get install libhdf5-dev
+    sudo apt-get install libvtk6-dev
 }
 
 
