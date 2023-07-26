@@ -20,4 +20,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_18.04
-        path: ${{ github.workspace }}/build_output
+        path: |
+          ${{ github.workspace }}/build_output
+          ${{ github.workspace }}/*.whl
