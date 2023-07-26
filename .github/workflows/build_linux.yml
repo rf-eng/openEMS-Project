@@ -15,24 +15,6 @@ on:
 
 jobs:
 
-  build_focal_py38:
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
-    - name: Install packages
-      run: source ci_tools/ci.sh && ci_setup
-    - name: Build
-      run: source ci_tools/ci.sh && ci_build
-    - uses: actions/upload-artifact@v3
-      with:
-        name: build_20.04_py38
-        path: |
-          ${{ github.workspace }}/build_output
-          ${{ github.workspace }}/*.whl
-          
   build_jammy_py310:
     runs-on: ubuntu-22.04
     steps:
