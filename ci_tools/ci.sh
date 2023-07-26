@@ -16,9 +16,9 @@ function ci_pkg_install {
     sudo apt-get install gengetopt help2man groff pod2pdf bison flex libhpdf-dev libtool
     sudo apt-get install libhdf5-dev
     sudo apt-get install libvtk6-dev
-    sudo apt-get install python3-setuptools
-    sudo apt-get install cython3
-    sudo apt-get install python3-wheel
+    pip3 install Cython
+    pip3 install setuptools
+    pip3 install wheel
 }
 
 
