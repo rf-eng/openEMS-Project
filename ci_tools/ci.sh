@@ -37,12 +37,12 @@ function ci_build {
     cd $GITHUB_WORKSPACE/CSXCAD/python
     python setup.py build_ext -I$GITHUB_WORKSPACE/build_output/openEMS/include -L$GITHUB_WORKSPACE/build_output/openEMS/lib -R$GITHUB_WORKSPACE/build_output/openEMS/lib
     python setup.py bdist_wheel
-    pip3 install $GITHUB_WORKSPACE/openEMS-Project/CSXCAD/python/dist/CSXCAD-0.6.2-cp310-cp310-linux_x86_64.whl
+    pip3 install $GITHUB_WORKSPACE/CSXCAD/python/dist/CSXCAD-0.6.2-cp310-cp310-linux_x86_64.whl
 
     cd $GITHUB_WORKSPACE/openEMS/python
     python setup.py build_ext -I$GITHUB_WORKSPACE/build_output/openEMS/include -L$GITHUB_WORKSPACE/build_output/openEMS/lib -R$GITHUB_WORKSPACE/build_output/openEMS/lib
     python setup.py bdist_wheel
-    pip3 install $GITHUB_WORKSPACE/openEMS-Project/openEMS/python/dist/openEMS-0.0.33-cp310-cp310-linux_x86_64.whl
+    pip3 install $GITHUB_WORKSPACE/openEMS/python/dist/openEMS-0.0.33-cp310-cp310-linux_x86_64.whl
     #pip3 wheel $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
     #pip3 install $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
     #pip3 wheel $GITHUB_WORKSPACE/openEMS/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
