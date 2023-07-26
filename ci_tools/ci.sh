@@ -31,7 +31,8 @@ function ci_build {
     git submodule update --init fparser
     git submodule update --init hyp2mat
     git submodule update --init openEMS
-    $GITHUB_WORKSPACE/update_openEMS.sh $GITHUB_WORKSPACE/build_output --disable-GUI --python
+    cd $GITHUB_WORKSPACE
+    ./update_openEMS.sh $GITHUB_WORKSPACE/build_output --disable-GUI --python
     pip3 wheel $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
     pip3 install $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
     pip3 wheel $GITHUB_WORKSPACE/openEMS/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
