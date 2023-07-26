@@ -10,9 +10,10 @@ fi
 # general helper functions
 
 function ci_pkg_install {
+    #sudo add-apt-repository ppa:rock-core/qt4
     sudo apt-get update
     # Compiling OpenEMS may require installing the following packages:
-    sudo apt-get install cmake qt4-qmake libtinyxml-dev libcgal-dev #libvtk5-qt4-dev
+    sudo apt-get install cmake libtinyxml-dev libcgal-dev #qt4-qmake libvtk5-qt4-dev
     # Compiling hyp2mat may require installing the following packages:
     sudo apt-get install gengetopt help2man groff pod2pdf bison flex libhpdf-dev libtool
     sudo apt-get install libhdf5-dev
