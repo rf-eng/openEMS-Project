@@ -10,6 +10,7 @@ fi
 # general helper functions
 
 function ci_pkg_install {
+    sudo apt-get update
     # Compiling OpenEMS may require installing the following packages:
     sudo apt-get install cmake qt4-qmake libtinyxml-dev libcgal-dev #libvtk5-qt4-dev
     # Compiling hyp2mat may require installing the following packages:
