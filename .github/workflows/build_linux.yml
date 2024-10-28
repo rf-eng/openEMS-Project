@@ -1,0 +1,23 @@
+name: build_linux
+
+on:
+  workflow_dispatch
+#  push:
+#  pull_request:
+#    paths:
+#      - '.github/workflows/*.yml'
+
+jobs:
+
+  build_ubuntu-18.04:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install packages
+      run: source ci_tools/ci.sh && ci_setup
+    - name: Build
+      run: source ci_tools/ci.sh && ci_build
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build_18.04
+        path: /build_output
