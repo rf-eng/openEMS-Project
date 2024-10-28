@@ -13,7 +13,7 @@ function ci_pkg_install {
     sudo apt-get update
     sudo apt-get install build-essential cmake git libhdf5-dev libvtk7-dev libboost-all-dev libcgal-dev libtinyxml-dev qtbase5-dev libvtk7-qt-dev
     sudo apt-get install gengetopt help2man groff pod2pdf bison flex libhpdf-dev libtool
-    pip3 install numpy matplotlib cython h5py setuptools wheel
+    pip3 install numpy matplotlib cython==0.29.36 h5py setuptools wheel
 }
 
 
