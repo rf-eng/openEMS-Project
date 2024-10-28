@@ -16,6 +16,9 @@ function ci_pkg_install {
     sudo apt-get install gengetopt help2man groff pod2pdf bison flex libhpdf-dev libtool
     sudo apt-get install libhdf5-dev
     sudo apt-get install libvtk6-dev
+    sudo apt-get install python3-setuptools
+    sudo apt-get install cython3
+    sudo apt-get install python3-wheel
 }
 
 
@@ -34,4 +37,7 @@ function ci_build {
     git submodule update --init hyp2mat
     git submodule update --init openEMS
     $GITHUB_WORKSPACE/update_openEMS.sh $GITHUB_WORKSPACE/build_output --disable-GUI
+    pip3 wheel $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
+    pip3 install $GITHUB_WORKSPACE/CSXCAD/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
+    pip3 wheel $GITHUB_WORKSPACE/openEMS/python --global-option=build_ext --global-option=-L$GITHUB_WORKSPACE/build_output/lib --global-option=-I$GITHUB_WORKSPACE/build_output/include --global-option=-R$GITHUB_WORKSPACE/build_output/lib
 }
