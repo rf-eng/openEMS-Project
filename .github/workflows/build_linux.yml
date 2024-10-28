@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
     - name: Install packages
       run: source ci_tools/ci.sh && ci_setup
     - name: Build
