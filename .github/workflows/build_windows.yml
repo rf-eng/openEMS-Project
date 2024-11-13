@@ -1,0 +1,38 @@
+name: build_windows
+
+on:
+  workflow_dispatch:
+    inputs:
+        debug_enabled:
+          type: boolean
+          description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+          required: false
+          default: false
+#  push:
+#  pull_request:
+#    paths:
+#      - '.github/workflows/*.yml'
+
+jobs:
+
+  build_windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    #- name: Install packages
+    #  run: source ci_tools/ci.sh && ci_setup
+    # Enable tmate debugging of manually-triggered workflows if the input option was provided
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+    #- name: Build
+    #  run: source ci_tools/ci.sh && ci_build
+    #- uses: actions/upload-artifact@v3
+    #  with:
+    #    name: build_22.04_py310
+    #    path: |
+    #      ${{ github.workspace }}/build_output
+    #      ${{ github.workspace }}/*.whl
