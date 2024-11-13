@@ -18,6 +18,7 @@ jobs:
   build_windows:
     runs-on: windows-latest
     steps:
+    - uses: microsoft/setup-msbuild@v2
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
