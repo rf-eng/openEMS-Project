@@ -10,10 +10,10 @@ git submodule update --init fparser
 git submodule update --init hyp2mat
 git submodule update --init openEMS
 
-vcpkg install tinyxml
-vcpkg install hdf5
-vcpkg install cgal
-vcpkg install vtk --recurse
+# vcpkg install tinyxml
+# vcpkg install hdf5
+# vcpkg install cgal
+# vcpkg install vtk --recurse
 
 mkdir build
 cd build

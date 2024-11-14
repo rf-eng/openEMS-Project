@@ -23,6 +23,14 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.12'
+    - name: vcpkg build
+      uses: johnwason/vcpkg-action@v6
+      id: vcpkg
+      with:
+        pkgs: vtk cgal hdf5 tinyxml
+        triplet: x64-windows-release
+        token: ${{ github.token }}
+        github-binarycache: true
     #- name: Install packages
     #  run: source ci_tools/ci.sh && ci_setup
     # Enable tmate debugging of manually-triggered workflows if the input option was provided
