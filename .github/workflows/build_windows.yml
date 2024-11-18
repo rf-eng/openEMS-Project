@@ -20,6 +20,8 @@ jobs:
     steps:
     - uses: microsoft/setup-msbuild@v2
     - uses: actions/checkout@v3
+      with:
+        submodules: recursive
     - uses: actions/setup-python@v4
       with:
         python-version: '3.12'
@@ -27,7 +29,7 @@ jobs:
       uses: johnwason/vcpkg-action@v6
       id: vcpkg
       with:
-        pkgs: vtk cgal hdf5 tinyxml
+        pkgs: vtk[cgns,core,libharu,libtheora,netcdf,proj,seacas,sql,qt] cgal hdf5 tinyxml
         triplet: x64-windows-release
         token: ${{ github.token }}
         github-binarycache: true
