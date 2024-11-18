@@ -30,7 +30,7 @@ jobs:
       id: vcpkg
       with:
         pkgs: vtk[cgns,core,libharu,libtheora,netcdf,proj,seacas,sql] cgal hdf5 tinyxml
-        triplet: x64-windows-release
+        triplet: x64-windows
         token: ${{ github.token }}
         github-binarycache: true
     #- name: Install packages
