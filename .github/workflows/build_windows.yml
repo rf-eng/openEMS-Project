@@ -29,7 +29,7 @@ jobs:
       uses: johnwason/vcpkg-action@v6
       id: vcpkg
       with:
-        pkgs: vtk[cgns,core,libharu,libtheora,netcdf,proj,seacas,sql,qt] cgal hdf5 tinyxml
+        pkgs: vtk[cgns,core,libharu,libtheora,netcdf,proj,seacas,sql] cgal hdf5 tinyxml
         triplet: x64-windows-release
         token: ${{ github.token }}
         github-binarycache: true
