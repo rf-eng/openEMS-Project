@@ -19,6 +19,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: microsoft/setup-msbuild@v2
+      with:
+        msbuild-architecture: x64
     - uses: actions/checkout@v3
       with:
         submodules: recursive
@@ -30,7 +32,7 @@ jobs:
       id: vcpkg
       with:
         pkgs: vtk[cgns,core,libharu,libtheora,netcdf,proj,seacas,sql] cgal hdf5 tinyxml
-        triplet: x64-windows
+        triplet: x64-windows-release
         token: ${{ github.token }}
         github-binarycache: true
     #- name: Install packages
