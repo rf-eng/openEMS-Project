@@ -15,13 +15,13 @@ on:
 
 jobs:
 
-  build_jammy_py310:
+  build_jammy_py311:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.11'
     - name: Install packages
       run: source ci_tools/ci.sh && ci_setup
     # Enable tmate debugging of manually-triggered workflows if the input option was provided
@@ -32,7 +32,7 @@ jobs:
       run: source ci_tools/ci.sh && ci_build
     - uses: actions/upload-artifact@v3
       with:
-        name: build_22.04_py310
+        name: build_22.04_py311
         path: |
           ${{ github.workspace }}/build_output
           ${{ github.workspace }}/*.whl
